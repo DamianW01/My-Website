@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap');
+//  font-family: 'Crimson Pro', serif; || https://fonts.google.com/specimen/Crimson+Pro?vfonly=true&subset=latin-ext&preview.text=Aventure%20Studios%20Building%20team&preview.text_type=custom
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    height: 600vh;
+}
