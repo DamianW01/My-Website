@@ -1,119 +1,3 @@
-////////////////////////////////
-// NAVIGATION
-
-.navigation {
-
-    //////////////////
-    // HOVER NAV = SCALE LAYOUT
-    &:hover + main.main {
-        // transform: scale(0.98);
-    }
-
-    position: fixed;
-    width: 8rem;
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom, #008aff, #00ffe7 );
-    display: flex;
-    flex-direction: column;
-    z-index: 99;
-
-    &__menu-btn {
-        align-self: center;
-        margin: 1.5rem 0;
-    }
-
-    .sidebar {
-        margin-top: 5rem;
-
-        &__nav {
-            list-style: none;
-
-            &__item {
-                
-                &:first-child {
-                    margin-top: 2rem;
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 3.5rem;
-                }
-
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            &__link {
-                color: #fff;
-                text-decoration: none;
-                font-size: 3rem;
-                position: relative;
-
-                & > * {
-                    transition: .5s all ease-in-out;
-                }
-                
-                &:hover > i {
-                    transform: scale(1.2);
-                }
-
-                &:hover > span.nav-open {
-                    transform: scale(1.2);
-                    font-weight: 700;
-                }
-
-                &-discord {
-                    margin-top: 1rem;
-                }
-
-                &:hover {
-                    color: $color-primary-hover;
-                }
-
-                span {
-                    opacity: 0;
-                    position: absolute;
-                    transform: translateY(2rem);
-                    margin-left: 3rem;
-                    z-index: 1;
-
-                    .discord {
-                        display: block;
-
-                        img.discord-icon {
-                            display: block;
-                            width: 5rem;
-                        }
-                    }
-
-                    &.nav-open {
-                        opacity: 1;
-                        transform: translateY(0);
-                        display: inline-block;
-                    }
-                }
-            }
-        }
-    }
-
-    .extended-nav {
-        transform: translateY(-100%);
-        background-image: linear-gradient(to bottom, #008aff, #00ffe7 );
-        opacity: 0;
-        position: fixed;
-        width: 13rem;
-        min-height: 100vh;
-        margin-left: 8rem;
-        transition: 1s all ease-in-out;
-
-        &-open {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-    
-}
-
 main.layout {
     display: flex;
     flex-direction: column;
@@ -126,15 +10,21 @@ main.layout {
         justify-content: center;
         flex-wrap: wrap;
         min-width: 100vw;
-        height: 75vh;
+        height: 65vh;
         position: relative;
+        background-image: url(/assets/images/hero--large.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
 
         &::after {
             content: '';
+            top: 0;
+            right: 0;
             bottom: 0;
             left: 0;
             position: absolute;
-            width: 100%;
+            background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.4) 40%,rgba(0, 24, 69, 0.6) rgba(4, 102, 200, 0.3) );
         }
 
 
@@ -159,13 +49,20 @@ main.layout {
             justify-content: center;
             flex-direction: column;
             margin-right: 10rem;
-            color: $color-primary;
+            color: $color-white;
         }
         .content {
             &__primary {
                 font-size: 5rem;
                 letter-spacing: 3px;
                 margin-bottom: 3rem;
+                background: -webkit-linear-gradient($color-grey-dark, $color-grey-dark-2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                span {
+                    color: $color-primary-light-1;
+                }
             }
             &__secondary {
                 font-size: 3rem;
@@ -178,16 +75,5 @@ main.layout {
             width: 100vw;
             position: absolute;
         }
-
-        &__bottom--waves {
-            width: 100%;
-            position: absolute;
-            bottom: -15rem;
-            transform: rotate(180deg);
-        }
     }
-
-
-
 }
-

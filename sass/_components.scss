@@ -2,79 +2,6 @@
 // MENU HAMBURGER
 
 // $gradient-primary: linear-gradient(to right bottom, rgba(#d00000, 8), rgba(#9d0208, 8));
-
-.navigation__menu-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.7rem;
-    height: 4.7rem;
-    cursor: pointer;
-    transition: all .5 ease-in-out;
-
-    &:hover > &__hamburger {
-        background: $color-primary-hover;
-        width: 3.5rem;
-        height: 0.6rem;
-
-        &::before,
-        &::after {
-        background: $color-primary-hover;
-        width: 3.5rem;
-        height: 0.6rem;
-        }
-    }
-
-    &__hamburger,
-    &__hamburger::before,
-    &__hamburger::after {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 3rem;
-        height: 0.5rem;
-        border-radius: 1rem;
-        background: $color-white;
-        transition: all .5s ease-in-out;
-    }
-
-    &__hamburger {
-        &::before,
-        &::after {
-            content: '';
-        }
-        &::before {
-            transform: translate(-50%, -50%) translateY(-1rem);
-        }
-        &::after {
-            transform: translate(-50%, -50%) translateY(1rem);
-        }
-    }
-
-    &-open > .navigation__menu-btn__hamburger {
-
-        & {
-            background: transparent !important;
-        }
-
-        &::before,
-        &::after {
-            background: $color-primary-hover;
-        }
-
-        &::before {
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        &::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-    }
-}
-
 .button--primary-color {
     margin: 2rem 0;
     padding: 1.5rem 5rem;
@@ -85,7 +12,7 @@
     font-size: 2rem;
     border: none;
     letter-spacing: 2px;
-    box-shadow: 7px 7px 15px $color-grey-dark-2;
+    // box-shadow: 7px 7px 15px $color-grey-dark-2;
     cursor: pointer;
     transition: .5s ease-in-out;
 

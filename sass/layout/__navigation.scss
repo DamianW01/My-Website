@@ -1,0 +1,115 @@
+////////////////////////////////
+// NAVIGATION
+
+.navigation {
+
+    //////////////////
+    // HOVER NAV = SCALE LAYOUT
+    &:hover + main.main {
+        // transform: scale(0.98);
+    }
+
+    position: fixed;
+    width: 8rem;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #008aff, #00ffe7 );
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+
+    &__menu-btn {
+        align-self: center;
+        margin: 1.5rem 0;
+    }
+
+    .sidebar {
+        margin-top: 5rem;
+
+        &__nav {
+            list-style: none;
+
+            &__item {
+                
+                &:first-child {
+                    margin-top: 2rem;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 3.5rem;
+                }
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            &__link {
+                color: #fff;
+                text-decoration: none;
+                font-size: 3rem;
+                position: relative;
+
+                & > * {
+                    transition: .5s all ease-in-out;
+                }
+                
+                &:hover > i {
+                    transform: scale(1.2);
+                }
+
+                &:hover > span.nav-open {
+                    transform: scale(1.2);
+                    font-weight: 700;
+                }
+
+                &-discord {
+                    margin-top: 1rem;
+                }
+
+                &:hover {
+                    color: $color-primary-hover;
+                }
+
+                span {
+                    opacity: 0;
+                    position: absolute;
+                    transform: translateY(2rem);
+                    margin-left: 3rem;
+                    z-index: 1;
+
+                    .discord {
+                        display: block;
+
+                        img.discord-icon {
+                            display: block;
+                            width: 5rem;
+                        }
+                    }
+
+                    &.nav-open {
+                        opacity: 1;
+                        transform: translateY(0);
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .extended-nav {
+        transform: translateY(-100%);
+        background-image: linear-gradient(to bottom, #008aff, #00ffe7 );
+        opacity: 0;
+        position: fixed;
+        width: 13rem;
+        min-height: 100vh;
+        margin-left: 8rem;
+        transition: 1s all ease-in-out;
+
+        &-open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+}
